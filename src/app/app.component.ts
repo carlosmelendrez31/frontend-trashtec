@@ -8,6 +8,8 @@ import { InputTextModule } from 'primeng/inputtext';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home/home.component';
+import { RegistroComponent } from './registro/registro.component';
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -19,7 +21,8 @@ import { HomeComponent } from './home/home.component';
     ButtonModule,
     InputTextModule,
     HomeComponent,
-    ToastModule
+    ToastModule,
+    RegistroComponent
   ],
   providers: [MessageService],
   templateUrl: './app.component.html',
