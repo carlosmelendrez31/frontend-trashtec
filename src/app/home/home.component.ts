@@ -30,4 +30,9 @@ import { CardModule } from 'primeng/card';
     }
   `]
 })
-export class HomeComponent {}
+export class HomeComponent {
+  
+    imagenUrl: string = 'images/trashtec.PNG';
+  
+  
+}

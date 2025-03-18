@@ -1,42 +1,91 @@
+
 <!DOCTYPE html>
 <html lang="es">
    
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <header></header>
+    
+  
     
     <style>
-        body {
-            margin: 0;
-            height: 100vh;
-            display: grid;
-            grid-template-columns: 1fr 1fr; /* Divide en 2 columnas iguales */
-        }
-        .izquierda {
-            background-color: #4CAF50; /* Color de fondo verde */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 2em;
-        }
-        .header{
-            background-color: white;
-        }
-        .derecha {
-            background-color: #2196F3; /* Color de fondo azul */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 2em;
-        }
+      
+      body {
+    margin: 0;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Divide en 2 columnas iguales */
+}
+
+.izquierda {
+    background-color: #1E1EFF; /* Azul intenso */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    color: white;
+    padding-left: 60px;
+}
+
+.izquierda h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.izquierda h3 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+}
+
+.izquierda button {
+    border: 2px solid white;
+    color: white;
+    background: transparent;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+.izquierda button:hover {
+    background-color: white;
+    color: #1E1EFF;
+}
+
+.izquierda h5 {
+    font-size: 1rem;
+    margin-top: 20px;
+}
+
+.derecha {
+    background-color: white; /* Fondo blanco */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.derecha img{
+    width: 100%;
+            height: 100%;
+            object-fit: cover; 
+}
+
+.header {
+    background-color: white;
+}
+
     </style>
 
 <body>
-    <div class="izquierda">Izquierda</div>
-    <div class="derecha">Derecha</div>
+    <div class="izquierda"><h1>Bienvenido</h1> <h3>Utiliza nuestro bote inteligente</h3>
+        <button type="button" class="btn btn-outline-light">Registrate Ahora</button>
+        <h5>empieza ya</h5>
+    </div>
+    
+    <div class="derecha">
+      <img src="/home.png">  
+    </div>
 </body>
 </html>
 
