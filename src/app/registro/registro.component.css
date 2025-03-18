@@ -1,0 +1,113 @@
+body {
+    margin: auto;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    font-family: Arial, sans-serif;
+}
+
+.izquierda {
+    background-color: white;
+    margin-left: 250px; 
+}
+
+.izquierda img {
+    max-width: 80%;
+}
+
+.imgboteabierto {
+    margin-right: 50px; 
+    margin-top: 150px;
+    width: 100%;
+    height: 100%;
+}
+
+.derecha {
+    background-color: #007bff; /* Azul */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra el contenido verticalmente */
+    align-items: center;
+    color: white;
+    padding: 20px;
+    height: 100%; /* Asegura que ocupe el 100% de la altura */
+}
+
+.form-container {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    margin-inline:initial;
+    margin-top: 110px;
+}
+.h2{
+    text-align: center;
+    font-style: italic;
+    
+}
+
+.input-group {
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.input-group input {
+    border: none;
+    outline: none;
+    width: 100%;
+    padding-left: 10px;
+}
+
+.input-group i {
+    color: rgb(19, 17, 17);
+}
+
+.password-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.password-container input {
+    flex: 1;
+    padding-right: 40px;
+}
+
+.password-container button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+}
+
+.button {
+    width: 100%;
+    background: white;
+    color: black;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background: lightgray;
+}
+
+.link {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.link a {
+    color: rgb(7, 42, 63);
+    text-decoration: none;
+}

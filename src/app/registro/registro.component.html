@@ -1,1 +1,48 @@
-<p>registro works!</p>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    
+    <div class="izquierda">
+        <img src="/logotrashtec.PNG" alt="trashtec logo">
+        <div class="imgboteabierto">
+            <img src="/boteabierto.png" alt="boteabierto">
+        </div>
+    </div>
+    <div class="derecha">
+        <div class="h2">
+            <h2>REGISTRO</h2>
+        </div>
+        <div class="form-container">
+            <div class="input-group">
+                <i class="fas fa-user"></i>
+                <input type="text" placeholder="Ingrese su nombre" required>
+            </div>
+            <div class="input-group">
+                <input type="email" placeholder="correo@gmail.com" required />
+                <div class="invalid-feedback">
+                    Por favor ingrese un correo electrónico válido.
+                </div>
+            </div>
+            <div class="input-group password-container">
+                <i class="fas fa-lock"></i>
+                <input [type]="showPassword ? 'text' : 'password'" class="form-control" placeholder="Contraseña" required />
+                <button type="button" (click)="togglePassword()">
+                    <i class="bi" [ngClass]="showPassword ? 'bi-eye-slash' : 'bi-eye'"></i>
+                </button>
+            </div>
+              
+            <button class="button">Entrar</button>
+            <p class="link">¿Tiene una cuenta? <a href="#">Iniciar sesión</a></p>
+        </div>
+    </div>
+</body>
+</html>
+
+
+  

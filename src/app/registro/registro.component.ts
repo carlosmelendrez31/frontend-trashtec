@@ -1,11 +1,15 @@
 import { Component } from '@angular/core';
-
+import { CommonModule } from '@angular/common'; 
 @Component({
   selector: 'app-registro',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './registro.component.html',
   styleUrl: './registro.component.css'
 })
 export class RegistroComponent {
+  showPassword = false;
 
+  togglePassword() {
+    this.showPassword = !this.showPassword;
+  }
 }
