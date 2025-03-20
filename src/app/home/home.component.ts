@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { CardModule } from 'primeng/card';
+import { Router} from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -32,7 +33,12 @@ import { CardModule } from 'primeng/card';
 })
 export class HomeComponent {
   
-    imagenUrl: string = 'images/trashtec.PNG';
+    constructor(private router: Router) {}
+    irARegistro() {
+      this.router.navigate(['/registro']); // <-- debe ser en minúsculas
+    }
+    
+  }
   
-  
-}
+
+

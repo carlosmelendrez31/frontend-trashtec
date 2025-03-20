@@ -1,56 +1,25 @@
-import { Component, inject } from '@angular/core';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MessageService } from 'primeng/api';
-import { ToastModule } from 'primeng/toast';
-import { ButtonModule } from 'primeng/button';
-import { InputTextModule } from 'primeng/inputtext';
-import { FormsModule } from '@angular/forms';
+import { Component } from '@angular/core';
+import { AuthService } from './services/auth.service';
+import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { HomeComponent } from './home/home.component';
-import { RegistroComponent } from './registro/registro.component';
-
+import { LoginComponent } from './login/login.component';
+import { HomeComponent } from "./home/home.component";
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [
-    CommonModule,
-    HttpClientModule,
-    ReactiveFormsModule,
-    FormsModule,
-    ButtonModule,
-    InputTextModule,
-    HomeComponent,
-    ToastModule,
-    RegistroComponent
-  ],
-  providers: [MessageService],
+  imports: [CommonModule, RouterModule, LoginComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  private http = inject(HttpClient);
-  private fb = inject(FormBuilder);
-  private messageService = inject(MessageService);
+  constructor(private authService: AuthService) {}
 
-  usuarioForm: FormGroup;
-  apiUrl = 'https://localhost:7196/api/Usuarios/agregar'; // Ajusta la URL a tu API
-
-  constructor() {
-    this.usuarioForm = this.fb.group({
-      nombre: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      dispositivo_id: [''] // Opcional
-    });
+  get nombreUsuario(): string | null {
+    return this.authService.getNombreUsuario();
   }
 
-  registrarUsuario() {
-    if (this.usuarioForm.valid) {
-      this.http.post(this.apiUrl, this.usuarioForm.value).subscribe({
-        next: () => this.messageService.add({ severity: 'success', summary: 'Éxito', detail: 'Usuario registrado correctamente' }),
-        error: () => this.messageService.add({ severity: 'error', summary: 'Error', detail: 'No se pudo registrar el usuario' })
-      });
-    }
+  logout() {
+    this.authService.logout();
   }
 }
 

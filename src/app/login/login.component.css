@@ -1,0 +1,134 @@
+
+.imgboteabierto {
+    margin-right: 50px; 
+    margin-top: 150px;
+    width: 100%;
+    height: 100vh;
+}
+
+
+
+.form-container {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    margin-inline:initial;
+    margin-top: 110px;
+}
+.h2{
+    text-align: center;
+    font-style: italic;
+    
+}
+
+.input-group {
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.input-group input {
+    border: none;
+    outline: none;
+    width: 100%;
+    padding-left: 10px;
+}
+
+.input-group i {
+    color: rgb(19, 17, 17);
+}
+
+.password-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.password-container input {
+    flex: 1;
+    padding-right: 40px;
+}
+
+.password-container button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Divide en 2 columnas iguales */
+}
+
+.izquierda {
+    background-color: #1E1EFF; /* Azul intenso */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    color: white;
+    padding-left: 60px;
+}
+
+.izquierda h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.izquierda h3 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+}
+
+.izquierda button {
+    border: 2px solid white;
+    color: white;
+    background: transparent;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+.izquierda button:hover {
+    background-color: white;
+    color: #1E1EFF;
+}
+
+.izquierda h5 {
+    font-size: 1rem;
+    margin-top: 20px;
+}
+
+.derecha {
+    background-color: white; /* Fondo blanco */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.derecha img{
+    width: 100%;
+            height: 100%;
+            object-fit: cover; 
+}
+
+.header {
+    background-color: white;
+}
+
+    
+
+
+/* */
