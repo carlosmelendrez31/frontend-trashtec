@@ -18,6 +18,7 @@ import { ActualizarDatosComponent } from './actualizar-datos/actualizar-datos.co
     InputTextModule,
     HomeComponent,
     ToastModule,
+    RouterModule,
     RegistroComponent,
     ActualizarDatosComponent
   ],
