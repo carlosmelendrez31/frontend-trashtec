@@ -1,0 +1,59 @@
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Cambiado de height a min-height */
+    background-color: #007bff;
+    padding: 20px; /* Agrega espacio para que no se corte en pantallas pequeñas */
+    box-sizing: border-box;
+}
+  
+
+  .card {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  width: 300px; 
+
+  text-align: center;
+}
+  
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    font-weight: bold;
+    text-align: left;
+    
+  }
+  
+  input {
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  button {
+    margin-top: 15px;
+    padding: 10px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  body{
+    background-color: #007bff;
+   
+  }
+  button:hover {
+    background: #0056b3;
+  }
+  
