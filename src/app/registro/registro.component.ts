@@ -8,6 +8,9 @@ import { CommonModule } from '@angular/common';
   styleUrl: './registro.component.css'
 })
 export class RegistroComponent {
+  nombreusuario : string = "";
+  email : string = "";
+  contrasena : string = "";
   showPassword = false;
 
   togglePassword() {

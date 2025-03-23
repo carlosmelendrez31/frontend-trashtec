@@ -1,5 +1,6 @@
-<!-- navbar.component.html -->
 <nav class="navbar navbar-dark bg-primary fixed-top">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
   <div class="container-fluid">
     <a class="navbar-brand text-dark" href="#">Offcanvas navbar</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
@@ -34,16 +35,19 @@
         </ul>
 
         <!-- Mostrar el nombre de usuario si está disponible -->
-        <div *ngIf="nombreUsuario" class="navbar-text">
-          <i class="bi bi-person-circle"></i> {{ nombreUsuario }}
+        <div *ngIf="nombreusuario" class="navbar-text text-dark">
+          <i class="bi bi-person-circle fs-6 text-primary"></i> {{ nombreusuario }}
+          <button class="btn btn-danger" (click)="logout()">Logout</button>
         </div>
 
-        <button class="btn btn-outline-light" (click)="logout()">Logout</button>
+       
       </div>
     </div>
   </div>
 </nav>
-<app-login></app-login>
+
+<router-outlet></router-outlet>
+
 
 
 

@@ -1,26 +1,31 @@
 import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router'; // Importar RouterOutlet
+import { CommonModule } from '@angular/common'; // Para directivas como *ngIf
 import { AuthService } from './services/auth.service';
-import { RouterModule } from '@angular/router';
-import { CommonModule } from '@angular/common';
-import { LoginComponent } from './login/login.component';
-import { HomeComponent } from "./home/home.component";
+
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterModule, LoginComponent],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  imports: [
+    CommonModule,RouterOutlet
+  ]
 })
 export class AppComponent {
-  constructor(private authService: AuthService) {}
+  nombreusuario: string = '';
 
-  get nombreUsuario(): string | null {
-    return this.authService.getNombreUsuario();
+  constructor(private authService: AuthService) {
+    this.authService.nombreusuario$.subscribe(nombre => {
+      this.nombreusuario = nombre; // Se actualiza automáticamente en el navbar
+    });
   }
 
-  logout() {
+  logout(): void {
     this.authService.logout();
   }
 }
+
+
 
 

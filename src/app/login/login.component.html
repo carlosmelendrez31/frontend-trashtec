@@ -1,37 +1,38 @@
-<html>
-<body>
-    <div class="izquierda">
+<div class="izquierda">
     <img src="/logotrashtec.PNG" alt="TrashTec logo">
     <div class="imgboteabierto">
-        <img src="/boteabierto.png" alt="Bote abierto">
+      <img src="/boteabierto.png" alt="Bote abierto">
     </div>
-</div>
-
-<div class="derecha">
+  </div>
+  
+  <div class="derecha">
     <div class="h2">
-        <h2>Iniciar Sesión</h2>
+      <h2>Iniciar Sesión</h2>
     </div>
-    
+  
     <div class="form-container">
-        <form (ngSubmit)="login()">
-            <div class="input-group">
-                <input [(ngModel)]="email" name="email" type="email" placeholder="correo@gmail.com" required class="form-control"/>
-                <div class="invalid-feedback">
-                    Por favor ingrese un correo electrónico válido.
-                </div>
-            </div>
-            
-            <div class="input-group password-container">
-                <i class="fas fa-lock"></i>
-                <input [type]="showPassword ? 'text' : 'password'" [(ngModel)]="password" name="password" class="form-control" placeholder="Contraseña" required />
-                <button type="button" (click)="togglePassword()" class="btn btn-light">
-                    <i class="bi" [ngClass]="showPassword ? 'bi-eye-slash' : 'bi-eye'"></i>
-                </button>
-            </div>
-
-            <button type="button" class="btn btn-success">Iniciar sesion</button>
-        </form>
+      <form #loginForm="ngForm" (ngSubmit)="login()">
+        <div class="input-group">
+          <input [(ngModel)]="email" name="email" type="email" placeholder="correo@gmail.com" required class="form-control" />
+          <div class="invalid-feedback">
+            Por favor ingrese un correo electrónico válido.
+          </div>
+        </div>
+  
+        <div class="input-group password-container">
+          <i class="fas fa-lock"></i>
+          <input [type]="showPassword ? 'text' : 'Contraseña'" [(ngModel)]="contrasena" name="contrasena" class="form-control" placeholder="Contraseña" required />
+          <button type="button" (click)="togglePassword()" class="btn btn-light">
+            <i class="bi" [ngClass]="showPassword ? 'bi-eye-slash' : 'bi-eye'"></i>
+          </button>
+        </div>
+  
+        <button type="submit" class="btn btn-success">Iniciar sesión</button>
+  
+        <div *ngIf="errorMessage" class="alert alert-danger mt-2">
+          {{ errorMessage }}
+        </div>
+      </form>
     </div>
-</div>
-</body>
-</html>
+  </div>
+  

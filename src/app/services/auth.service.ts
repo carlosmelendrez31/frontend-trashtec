@@ -1,55 +1,55 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 import { tap } from 'rxjs/operators';
-import {jwtDecode} from 'jwt-decode';
+import { jwtDecode } from 'jwt-decode';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'https://tu-api.com/auth/login'; // Reemplaza con la URL real de tu API
+  private apiUrl = 'https://localhost:7196/api/auth/login'; // Reemplaza con la URL real de tu API
+
+  private nombreusuarioSubject = new BehaviorSubject<string>(this.getNombreUsuario());
+  nombreusuario$ = this.nombreusuarioSubject.asObservable(); // Observable para el navbar
 
   constructor(private http: HttpClient) {}
 
-  // Método para iniciar sesión
-  login(email: string, password: string): Observable<{ token: string }> {
-    return this.http.post<{ token: string }>(this.apiUrl, { email, password }).pipe(
+  login(email: string, contrasena: string): Observable<{ token: string }> {
+    return this.http.post<{ token: string }>(this.apiUrl, { email, contrasena }).pipe(
       tap(response => {
         this.setToken(response.token);
       })
     );
   }
 
-  // Método para guardar el token y extraer el nombre de usuario
   setToken(token: string): void {
     localStorage.setItem('token', token);
-
-    // Decodificar el token y extraer el nombre de usuario
+    
+    // Decodificar el token para obtener el nombre de usuario
+    
     const decodedToken: any = jwtDecode(token);
-    const nombreUsuario = decodedToken.nombreUsuario; // Asegúrate de que el token lo incluya
+    const nombreusuario = decodedToken["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"] || '';
 
-    localStorage.setItem('nombreUsuario', nombreUsuario);
+    localStorage.setItem('nombreusuario', nombreusuario);
+    this.nombreusuarioSubject.next(nombreusuario); // Notificar el cambio
   }
 
-  // Obtener el nombre de usuario desde localStorage
   getNombreUsuario(): string {
     return localStorage.getItem('nombreUsuario') ?? '';
   }
 
-  // Obtener el token almacenado
-  getToken(): string {
-    return localStorage.getItem('token') ?? '';
-  }
-
-  // Verificar si el usuario está autenticado
   isAuthenticated(): boolean {
     return !!this.getToken();
   }
 
-  // Método para cerrar sesión
+  getToken(): string {
+    return localStorage.getItem('token') ?? '';
+  }
+
   logout(): void {
     localStorage.clear();
+    this.nombreusuarioSubject.next(''); // Notificar que ya no hay usuario logueado
   }
 }
 
