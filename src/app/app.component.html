@@ -12,6 +12,11 @@
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">
+
+        <div *ngIf="nombreusuario" class="navbar-text text-dark">
+          <i class="bi bi-person-circle fs-6 text-primary"></i> {{ nombreusuario }}
+          <button class="btn btn-danger" (click)="logout()">Logout</button>
+        </div>
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
           <li class="nav-item">
             <a class="nav-link text-dark active" aria-current="page" href="#">Home</a>
@@ -34,11 +39,7 @@
           </li>
         </ul>
 
-        <!-- Mostrar el nombre de usuario si está disponible -->
-        <div *ngIf="nombreusuario" class="navbar-text text-dark">
-          <i class="bi bi-person-circle fs-6 text-primary"></i> {{ nombreusuario }}
-          <button class="btn btn-danger" (click)="logout()">Logout</button>
-        </div>
+       
 
        
       </div>
