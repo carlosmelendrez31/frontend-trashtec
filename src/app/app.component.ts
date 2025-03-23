@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home/home.component';
 import { RegistroComponent } from './registro/registro.component';
+import { ActualizarDatosComponent } from './actualizar-datos/actualizar-datos.component';
 
 @Component({
   selector: 'app-root',
@@ -22,7 +23,8 @@ import { RegistroComponent } from './registro/registro.component';
     InputTextModule,
     HomeComponent,
     ToastModule,
-    RegistroComponent
+    RegistroComponent,
+    ActualizarDatosComponent
   ],
   providers: [MessageService],
   templateUrl: './app.component.html',
