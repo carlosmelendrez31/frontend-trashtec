@@ -1,59 +1,39 @@
-
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh; /* Cambiado de height a min-height */
-    background-color: #007bff;
-    padding: 20px; /* Agrega espacio para que no se corte en pantallas pequeñas */
-    box-sizing: border-box;
+  max-width: 400px;
 }
-  
 
-  .card {
+h2 {
+  font-weight: bold;
+}
+
+form {
   background: white;
-  padding: 15px;
   border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  width: 300px; 
-
-  text-align: center;
 }
-  
 
-  form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  label {
-    font-weight: bold;
-    text-align: left;
-    
-  }
-  
-  input {
-    padding: 8px;
-    margin-top: 5px;
-    border-radius: 5px;
-    font-size: 16px;
-  }
-  
-  button {
-    margin-top: 15px;
-    padding: 10px;
-    background: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  body{
-    background-color: #007bff;
-   
-  }
-  button:hover {
-    background: #0056b3;
-  }
-  
+button {
+  transition: 0.3s;
+}
+
+button:disabled {
+  background: gray;
+  cursor: not-allowed;
+}
+/* Centrar el formulario y bajarlo un poco */
+.container-form {
+  display: flex;
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+  height: 100vh; /* Ocupa toda la pantalla */
+  padding-top: 100px; /* Baja el formulario para que no lo tape el navbar */
+}
+
+/* Estilo del formulario */
+.form-card {
+  width: 100%;
+  max-width: 400px; /* Ajusta el ancho del formulario */
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}

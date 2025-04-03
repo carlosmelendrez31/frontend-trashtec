@@ -26,14 +26,27 @@ export class AuthService {
   setToken(token: string): void {
     localStorage.setItem('token', token);
     
-    // Decodificar el token para obtener el nombre de usuario
-    
+    // Decodificar el token para obtener el ID del usuario
     const decodedToken: any = jwtDecode(token);
+  
+    console.log("📌 Token decodificado:", decodedToken); // 👀 Verificar datos en consola
+  
+    const idUsuario = decodedToken["id"] || decodedToken["sub"]; // ✅ Usar `id` o `sub`
     const nombreusuario = decodedToken["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"] || '';
-
+  
+    console.log("📌 ID del usuario extraído:", idUsuario); // 👀 Verificar si se obtiene bien
+  
+    if (idUsuario) {
+      localStorage.setItem('idUsuario', idUsuario);
+    } else {
+      console.error("❌ Error: No se pudo extraer `idUsuario` del token.");
+    }
+  
     localStorage.setItem('nombreusuario', nombreusuario);
     this.nombreusuarioSubject.next(nombreusuario); // Notificar el cambio
   }
+  
+  
 
   getNombreUsuario(): string {
     return localStorage.getItem('nombreUsuario') ?? '';
@@ -50,6 +63,12 @@ export class AuthService {
   logout(): void {
     localStorage.clear();
     this.nombreusuarioSubject.next(''); // Notificar que ya no hay usuario logueado
+  }
+
+  getUserData(): any {
+    const token = this.getToken();
+    if (!token) return null;
+    return JSON.parse(atob(token.split('.')[1])); // Decodifica el payload del JWT
   }
 }
 

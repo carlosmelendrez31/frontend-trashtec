@@ -14,35 +14,43 @@
             <img src="/boteabierto.png" alt="boteabierto">
         </div>
     </div>
+    
     <div class="derecha">
         <div class="h2">
             <h2>REGISTRO</h2>
         </div>
         <div class="form-container">
-            <div class="input-group">
-                <i class="fas fa-user"></i>
-                <input type="text" placeholder="Ingrese su nombre" required>
-            </div>
-            <div class="input-group">
-                <input type="email" placeholder="correo@gmail.com" required />
-                <div class="invalid-feedback">
-                    Por favor ingrese un correo electrónico válido.
+            <form [formGroup]="registroForm" (ngSubmit)="registrar()">
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" formControlName="nombreusuario" placeholder="Ingrese su nombre" required>
                 </div>
-            </div>
-            <div class="input-group password-container">
-                <i class="fas fa-lock"></i>
-                <input [type]="showPassword ? 'text' : 'password'" class="form-control" placeholder="Contraseña" required />
-                <button type="button" (click)="togglePassword()">
-                    <i class="bi" [ngClass]="showPassword ? 'bi-eye-slash' : 'bi-eye'"></i>
-                </button>
-            </div>
-              
-            <button class="button">Entrar</button>
-            <p class="link">¿Tiene una cuenta? <a href="#">Iniciar sesión</a></p>
+                
+                <div class="input-group">
+                    <input type="email" formControlName="email" placeholder="correo@gmail.com" required>
+                    <div class="invalid-feedback">
+                        Por favor ingrese un correo electrónico válido.
+                    </div>
+                </div>
+                
+                <div class="input-group password-container">
+                    <i class="fas fa-lock"></i>
+                    <input [type]="showPassword ? 'text' : 'password'" formControlName="contrasena" class="form-control" placeholder="Contraseña" required>
+                    <button type="button" (click)="togglePassword()">
+                        <i class="bi" [ngClass]="showPassword ? 'bi-eye-slash' : 'bi-eye'"></i>
+                    </button>
+                </div>
+                
+                <button type="submit" class="button">Registrar</button>
+                <p class="link">¿Tiene una cuenta? <a href="#">Iniciar sesión</a></p>
+                
+                <p>{{ mensaje }}</p>
+            </form>
         </div>
     </div>
 </body>
 </html>
+
 
 
   
