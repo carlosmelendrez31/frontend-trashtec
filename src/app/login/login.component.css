@@ -12,14 +12,16 @@ body {
 }
 
 .izquierda img {
-    width: 50%;
+    max-width: 70%;
+    margin-top: 40px; 
+      
 }
 
 .imgboteabierto {
     margin-right: 50px; 
     margin-top: 150px;
-    width: 100%;
-    height: 100vh;
+    width: auto;
+    height: auto;
 }
 
 .derecha {
@@ -30,7 +32,7 @@ body {
     align-items: center;
     color: white;
     padding: 20px;
-    height: auto; /* Asegura que ocupe el 100% de la altura */
+    height: 90%; /* Asegura que ocupe el 100% de la altura */
 }
 
 .form-container {
@@ -43,6 +45,7 @@ body {
     margin-top: 110px;
 }
 .h2{
+    margin-top: 50px;
     text-align: center;
     font-style: italic;
     
@@ -94,9 +97,8 @@ body {
     color: black;
     padding: 10px;
     border: none;
-    border-radius: 10px;
+    border-radius: 5px;
     cursor: pointer;
-    text-align: center;
 }
 
 .button:hover {
@@ -112,6 +114,3 @@ body {
     color: rgb(7, 42, 63);
     text-decoration: none;
 }
-
-
-/* */

@@ -10,7 +10,6 @@
     <div class="h2">
       <h2>Iniciar Sesión</h2>
     </div>
-  
     <div class="form-container">
       <form #loginForm="ngForm" (ngSubmit)="login()">
         <div class="input-group">
@@ -19,7 +18,6 @@
             Por favor ingrese un correo electrónico válido.
           </div>
         </div>
-  
         <div class="input-group password-container">
           <i class="fas fa-lock"></i>
           <input [type]="showPassword ? 'text' : 'Contraseña'" [(ngModel)]="contrasena" name="contrasena" class="form-control" placeholder="Contraseña" required />
@@ -27,9 +25,7 @@
             <i class="bi" [ngClass]="showPassword ? 'bi-eye-slash' : 'bi-eye'"></i>
           </button>
         </div>
-  
         <button type="submit" class="btn btn-success">Iniciar sesión</button>
-  
         <div *ngIf="errorMessage" class="alert alert-danger mt-2">
           {{ errorMessage }}
         </div>
