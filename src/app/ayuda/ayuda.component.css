@@ -1,0 +1,49 @@
+.contenedor-ayuda {
+    background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
+  }
+  
+  .header-ayuda {
+    background-color: #007bff;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+  
+  .header-ayuda a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .logo {
+    height: 50px;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-top: 20px;
+    color: #003366;
+  }
+  
+  section {
+    padding: 20px;
+  }
+  
+  .contenedor-bote {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .contenedor-bote img {
+    width: 150px;
+    margin-right: 20px;
+  }
+  
+  ol li, ul li {
+    margin-bottom: 10px;
+  }

@@ -4,6 +4,7 @@ import { LoginComponent } from './login/login.component';  // Componente de logi
 import { RegistroComponent } from './registro/registro.component';
 import { ActualizarDatosComponent } from './actualizar-datos/actualizar-datos.component';
 import { CarritoComponent } from './carrito/carrito.component';
+import { AyudaComponent } from './ayuda/ayuda.component';
 
 export const routes: Route[] = [
  // { path: '', redirectTo: '/login', pathMatch: 'full' },  // Redirige a login si no está autenticado
@@ -13,7 +14,8 @@ export const routes: Route[] = [
   {path:'registro',component:RegistroComponent},
   {path:'login',component:LoginComponent},
   { path: 'actualizar-datos', component: ActualizarDatosComponent },
-  {path : 'carrito', component : CarritoComponent}
+  {path : 'carrito', component : CarritoComponent},
+  {path : 'ayuda', component : AyudaComponent}
 
   // otras rutas...
 ];
