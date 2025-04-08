@@ -1,0 +1,38 @@
+.contenedor {
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  .semaforo {
+    width: 150px;
+    height: 150px;
+    margin: 20px auto;
+    border-radius: 50%;
+    color: white;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    background-color: #333;
+    color: white;
+    border-radius: 8px;
+    transition: background 0.2s;
+  }
+  
+  button:hover {
+    background-color: #555;
+  }
+
+h2 { 
+    padding: 50px;
+    text-align: center;
+}

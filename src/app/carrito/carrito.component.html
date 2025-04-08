@@ -1,1 +1,9 @@
-<p>carrito works!</p>
+<div class="contenedor">
+    <h2>Llenado del Bote</h2>
+  
+    <div class="semaforo" [style.background]="color">
+      <p>{{ porcentaje }}%</p>
+    </div>
+  
+    <button (click)="activarServo()">🔑 Abrir bote</button>
+  </div>

@@ -8,7 +8,7 @@ import { jwtDecode } from 'jwt-decode';
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'https://localhost:7196/api/auth/login'; // Reemplaza con la URL real de tu API
+  private apiUrl = 'https://p0tcljpd-7196.usw3.devtunnels.ms/api/auth/login'; // Reemplaza con la URL real de tu API
 
   private nombreusuarioSubject = new BehaviorSubject<string>(this.getNombreUsuario());
   nombreusuario$ = this.nombreusuarioSubject.asObservable(); // Observable para el navbar

@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class RegistroService {
-  private apiUrl = 'https://localhost:7196/api/Usuarios/agregar'; // Ajusta la URL de tu API
+  private apiUrl = 'https://p0tcljpd-7196.usw3.devtunnels.ms/api/Usuarios/agregar'; // Ajusta la URL de tu API
 
   constructor(private http: HttpClient) {}
 

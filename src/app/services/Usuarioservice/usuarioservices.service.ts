@@ -12,7 +12,7 @@ export class UsuarioservicesService {
 
   // Método para actualizar el usuario
   actualizarUsuario(id: number, usuario: any): Observable<any> {
-    const url = `https://localhost:7196/api/Usuarios/${id}`;
+    const url = `https://p0tcljpd-7196.usw3.devtunnels.ms/api/Usuarios/${id}`;
     console.log("URL de la petición PUT:", url); // 👀 Verifica en consola
     return this.http.put(url, usuario);
   }
