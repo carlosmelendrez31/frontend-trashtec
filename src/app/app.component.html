@@ -10,11 +10,13 @@
       aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
       <div class="offcanvas-header">
         <h3 class="text-dark fw-bold" id="offcanvasNavbarLabel">Mi Cuenta</h3>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
+
       <div class="offcanvas-body">
 
         <!-- Si el usuario está autenticado -->
@@ -27,17 +29,23 @@
           <a class="btn btn-primary rounded-btn w-100 mb-2" routerLink="/actualizar-datos">✏️ Actualizar Datos</a>
           <a class="btn btn-danger rounded-btn w-100 mb-3" routerLink="/eliminar-cuenta">🗑️ Eliminar Cuenta</a>
 
-          <!-- Botón de Logout (sin cambios) -->
+          <!-- Botón de Logout -->
           <button class="btn btn-danger w-100 rounded-btn" (click)="logout()">Logout</button>
         </div>
 
         <!-- Si el usuario NO está autenticado -->
         <ul *ngIf="!nombreusuario" class="navbar-nav text-center w-100">
           <li class="nav-item mb-2">
-            <a class="nav-link rounded-btn custom-hover" routerLink="/login">🔑 Iniciar Sesión</a>
+            <a routerLink="/home" class="nav-link text-dark fw-bold">Inicio</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link rounded-btn custom-hover" routerLink="/registro">📝 Registrarse</a>
+          <li class="nav-item mb-2">
+            <a routerLink="/login" class="nav-link text-dark fw-bold">Iniciar Sesión</a>
+          </li>
+          <li class="nav-item mb-2">
+            <a routerLink="/registro" class="nav-link text-dark fw-bold">Registrarse</a>
+          </li>
+          <li class="nav-item mb-2">
+            <a routerLink="/ayuda" class="nav-link text-dark fw-bold">Ayuda</a>
           </li>
         </ul>
 
